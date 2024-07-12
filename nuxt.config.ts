@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       supabaseAnonKey: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY,
     },
   },
-  modules: ["@nuxtjs/supabase"],
+  modules: ["@nuxtjs/supabase", "@nuxtjs/tailwindcss", "shadcn-nuxt"],
   supabase: {
     url: process.env.NUXT_PUBLIC_SUPABASE_URL,
     key: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY,
@@ -17,6 +17,10 @@ export default defineNuxtConfig({
       callback: "/confirm",
       exclude: ["/"],
     },
+  },
+  shadcn: {
+    prefix: "U",
+    componentDir: "./app/components/ui",
   },
   future: {
     compatibilityVersion: 4,
