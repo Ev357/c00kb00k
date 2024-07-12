@@ -4,8 +4,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL,
-      supabaseAnonKey: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY,
+      supabase: {
+        url: process.env.NUXT_PUBLIC_SUPABASE_URL,
+        key: process.env.NUXT_PUBLIC_SUPABASE_KEY,
+      },
+    },
+    supabase: {
+      databaseUrl: process.env.NUXT_SUPABASE_DATABASE_URL,
     },
   },
   modules: [
@@ -18,7 +23,7 @@ export default defineNuxtConfig({
   ],
   supabase: {
     url: process.env.NUXT_PUBLIC_SUPABASE_URL,
-    key: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY,
+    key: process.env.NUXT_PUBLIC_SUPABASE_KEY,
     redirectOptions: {
       login: "/login",
       callback: "/confirm",
@@ -30,8 +35,8 @@ export default defineNuxtConfig({
     componentDir: "./app/components/ui",
   },
   site: {
-    name: 'C00kb00k',
-    description: 'C00kb00k',
+    name: "C00kb00k",
+    description: "C00kb00k",
   },
   i18n: {
     defaultLocale: "en",

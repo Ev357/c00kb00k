@@ -10,7 +10,8 @@
     "postinstall": "nuxt prepare",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
     "@nuxt/eslint": "^0.3.13",
@@ -20,6 +21,7 @@
     "@nuxtjs/tailwindcss": "^6.12.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "drizzle-orm": "^0.32.0",
     "lucide-vue-next": "^0.408.0",
     "nuxt": "^3.12.3",
     "radix-vue": "^1.9.1",
@@ -29,6 +31,7 @@
     "vue": "latest"
   },
   "devDependencies": {
+    "drizzle-kit": "^0.23.0",
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "typescript": "^5.5.3",
