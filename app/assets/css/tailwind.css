@@ -56,7 +56,7 @@
     @apply border-border;
   }
   body {
-    @apply font-nunito bg-background text-foreground;
+    @apply bg-background font-nunito text-foreground;
   }
   @font-face {
     font-family: "Nunito";

@@ -11,7 +11,7 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div class="absolute inset-0">
     <ConfigProvider :use-id="useIdFunction">
       <NuxtRouteAnnouncer />
       <NuxtLoadingIndicator />
