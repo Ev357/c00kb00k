@@ -1,3 +1,8 @@
 {
-  "APP_NAME": "C00kb00k"
+  "APP_NAME": "C00kb00k",
+  "ASIDE.DASHBOARD": "Přehled",
+  "ASIDE.NEW_RECEPIE": "Přidat recept",
+  "ASIDE.NOTIFICATIONS": "Notifikace",
+  "ASIDE.RECEPIES": "Recepty",
+  "ASIDE.SETTINGS": "Nastavení"
 }

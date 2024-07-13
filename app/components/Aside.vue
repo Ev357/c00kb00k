@@ -4,27 +4,27 @@ import { cn } from "@/lib/utils";
 
 const menuItems: { title: string; to: string; icon: string }[] = [
   {
-    title: "Dashboard",
+    title: "ASIDE.DASHBOARD",
     to: "/dashboard",
     icon: "i-lucide-layout-dashboard",
   },
   {
-    title: "Recepies",
+    title: "ASIDE.RECEPIES",
     to: "/recepies",
     icon: "i-lucide-gantt-chart",
   },
   {
-    title: "New Recipe",
+    title: "ASIDE.NEW_RECEPIE",
     to: "/new-recipe",
     icon: "i-lucide-square-plus",
   },
   {
-    title: "Notifications",
+    title: "ASIDE.NOTIFICATIONS",
     to: "/notifications",
     icon: "i-lucide-bell",
   },
   {
-    title: "Settings",
+    title: "ASIDE.SETTINGS",
     to: "/settings",
     icon: "i-lucide-settings",
   },
@@ -55,7 +55,7 @@ const menuItems: { title: string; to: string; icon: string }[] = [
               :to="item.to"
             >
               <span class="size-5 shrink-0" :class="item.icon"></span>
-              {{ item.title }}
+              {{ $t(item.title) }}
             </UNavigationMenuLink>
           </UNavigationMenuItem>
         </UNavigationMenuList>

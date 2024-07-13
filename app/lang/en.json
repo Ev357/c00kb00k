@@ -1,3 +1,8 @@
 {
-  "APP_NAME": "C00kb00k"
+  "APP_NAME": "C00kb00k",
+  "ASIDE.DASHBOARD": "Dashboard",
+  "ASIDE.NEW_RECEPIE": "New Recipe",
+  "ASIDE.NOTIFICATIONS": "Notifications",
+  "ASIDE.RECEPIES": "Recepies",
+  "ASIDE.SETTINGS": "Settings"
 }
