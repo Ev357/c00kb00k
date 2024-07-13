@@ -1,4 +1,8 @@
 const animate = require("tailwindcss-animate");
+const {
+  iconsPlugin,
+  getIconCollections,
+} = require("@egoist/tailwindcss-icons");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -80,7 +84,15 @@ module.exports = {
         "collapsible-down": "collapsible-down 0.2s ease-in-out",
         "collapsible-up": "collapsible-up 0.2s ease-in-out",
       },
+      fontFamily: {
+        nunito: ["Nunito"],
+      },
     },
   },
-  plugins: [animate],
+  plugins: [
+    animate,
+    iconsPlugin({
+      collections: getIconCollections(["lucide"]),
+    }),
+  ],
 };

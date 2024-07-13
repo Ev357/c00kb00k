@@ -20,15 +20,13 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@nuxtjs/seo",
     "@nuxtjs/i18n",
+    "@vueuse/nuxt",
+    "@nuxtjs/color-mode",
   ],
   supabase: {
     url: process.env.NUXT_PUBLIC_SUPABASE_URL,
     key: process.env.NUXT_PUBLIC_SUPABASE_KEY,
-    redirectOptions: {
-      login: "/login",
-      callback: "/confirm",
-      exclude: ["/"],
-    },
+    redirect: false,
   },
   shadcn: {
     prefix: "U",
@@ -54,6 +52,9 @@ export default defineNuxtConfig({
     ],
     lazy: true,
     langDir: "lang",
+  },
+  colorMode: {
+    classSuffix: "",
   },
   future: {
     compatibilityVersion: 4,

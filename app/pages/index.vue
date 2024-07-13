@@ -7,5 +7,5 @@ useSeoMeta({
 </script>
 
 <template>
-  <NuxtWelcome />
+  <div></div>
 </template>
