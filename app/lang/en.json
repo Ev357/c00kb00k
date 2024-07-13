@@ -4,5 +4,11 @@
   "ASIDE.NEW_RECEPIE": "New Recipe",
   "ASIDE.NOTIFICATIONS": "Notifications",
   "ASIDE.RECEPIES": "Recepies",
-  "ASIDE.SETTINGS": "Settings"
+  "ASIDE.SETTINGS": "Settings",
+  "AUTH.EMAIL": "Email",
+  "AUTH.LOGIN": "Login",
+  "AUTH.LOGIN.DESCRIPTION": "Don't have an account?",
+  "AUTH.LOGIN.TITLE": "Log in to C00kb00k",
+  "AUTH.LOG_OUT": "Log Out",
+  "AUTH.SIGN_UP": "Sign Up"
 }

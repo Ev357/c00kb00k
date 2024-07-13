@@ -20,6 +20,8 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@nuxtjs/seo",
     "@nuxtjs/i18n",
+    "@vueuse/nuxt",
+    "@nuxtjs/color-mode",
   ],
   supabase: {
     url: process.env.NUXT_PUBLIC_SUPABASE_URL,
@@ -50,6 +52,9 @@ export default defineNuxtConfig({
     ],
     lazy: true,
     langDir: "lang",
+  },
+  colorMode: {
+    classSuffix: "",
   },
   future: {
     compatibilityVersion: 4,
