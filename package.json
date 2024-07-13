@@ -22,7 +22,6 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.32.0",
-    "lucide-vue-next": "^0.408.0",
     "nuxt": "^3.12.3",
     "radix-vue": "^1.9.1",
     "shadcn-nuxt": "^0.10.4",
@@ -31,6 +30,8 @@
     "vue": "latest"
   },
   "devDependencies": {
+    "@egoist/tailwindcss-icons": "^1.8.1",
+    "@iconify-json/lucide": "^1.1.200",
     "drizzle-kit": "^0.23.0",
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
