@@ -3,14 +3,13 @@ import { toast } from "vue-sonner";
 
 const supabase = useSupabaseClient();
 
-const { t } = useI18n();
 const localePath = useLocalePath();
 
 const logOut = async () => {
   const { error } = await supabase.auth.signOut();
 
   if (error) {
-    toast.error(t("COMMON.ERROR"));
+    toast.error(getSupabaseError(error));
     return;
   }
 
