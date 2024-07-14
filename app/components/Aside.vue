@@ -37,7 +37,7 @@ const userInitial = computed(() => user.value.email.slice(0, 1).toUpperCase());
 
 <template>
   <nav class="hidden md:block">
-    <aside class="flex h-full flex-col border-r p-4">
+    <aside class="flex h-full w-64 flex-col border-r p-4">
       <NuxtLinkLocale
         to="/dashboard"
         class="flex items-center justify-center gap-2 text-2xl font-bold"
@@ -67,15 +67,18 @@ const userInitial = computed(() => user.value.email.slice(0, 1).toUpperCase());
           </UNavigationMenuItem>
         </UNavigationMenuList>
       </UNavigationMenu>
-      <UButton class="flex items-center gap-2" variant="ghost" size="sm">
-        <UAvatar class="border" size="xs">
-          <UAvatarImage :src="user.profile_picture" :alt="user.email" />
-          <UAvatarFallback class="dark:text-black">
-            {{ userInitial }}
-          </UAvatarFallback>
-        </UAvatar>
-        <p class="font-bold">{{ user.email }}</p>
-      </UButton>
+      <AsideMenu>
+        <UButton class="flex items-center gap-2" variant="ghost" size="sm">
+          <UAvatar class="border" size="xs">
+            <UAvatarImage :src="user.profile_picture ?? ''" :alt="user.email" />
+            <UAvatarFallback class="dark:text-black">
+              {{ userInitial }}
+            </UAvatarFallback>
+          </UAvatar>
+          <p class="truncate font-bold">{{ user.email }}</p>
+          <span class="i-lucide-ellipsis size-4 shrink-0"></span>
+        </UButton>
+      </AsideMenu>
     </aside>
   </nav>
 </template>
