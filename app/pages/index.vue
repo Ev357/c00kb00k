@@ -1,11 +1,8 @@
 <script setup lang="ts">
-const { t } = useI18n();
-
-useSeoMeta({
-  title: t("APP_NAME"),
+definePageMeta({
+  middleware: "auth",
 });
-</script>
 
-<template>
-  <div></div>
-</template>
+const localePath = useLocalePath();
+navigateTo(localePath("/dashboard"));
+</script>

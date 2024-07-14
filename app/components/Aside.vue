@@ -34,7 +34,10 @@ const menuItems: { title: string; to: string; icon: string }[] = [
 <template>
   <nav class="hidden md:block">
     <aside class="flex h-full flex-col border-r p-4">
-      <NuxtLinkLocale to="/" class="flex items-center gap-2 text-2xl font-bold">
+      <NuxtLinkLocale
+        to="/dashboard"
+        class="flex items-center gap-2 text-2xl font-bold"
+      >
         <span class="i-lucide-chef-hat size-8 shrink-0"></span>
         <h1>{{ $t("APP_NAME") }}</h1>
       </NuxtLinkLocale>
