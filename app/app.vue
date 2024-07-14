@@ -18,6 +18,7 @@ useHead({
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
+      <UToaster />
     </ConfigProvider>
   </div>
 </template>
