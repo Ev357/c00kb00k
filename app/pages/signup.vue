@@ -6,10 +6,10 @@ definePageMeta({
 const { t } = useI18n();
 
 useSeoMeta({
-  title: t("AUTH.LOGIN"),
+  title: t("AUTH.SIGN_UP"),
 });
 </script>
 
 <template>
-  <Auth />
+  <Auth mode="signup" />
 </template>
