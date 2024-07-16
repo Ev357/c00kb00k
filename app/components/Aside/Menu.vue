@@ -23,6 +23,8 @@ if (Shift_Ctrl_Q) {
     logOut();
   });
 }
+
+const { toggleDark, isDark } = useModeToggle();
 </script>
 
 <template>
@@ -31,6 +33,10 @@ if (Shift_Ctrl_Q) {
       <slot />
     </UDropdownMenuTrigger>
     <UDropdownMenuContent class="w-52">
+      <UDropdownMenuItem @mousedown="toggleDark">
+        <span>Theme</span>
+        <SwitchMode :is-dark />
+      </UDropdownMenuItem>
       <UDropdownMenuItem @mousedown="logOut">
         <span class="i-lucide-log-out mr-2 size-4"></span>
         <span>{{ $t("AUTH.LOG_OUT") }}</span>
