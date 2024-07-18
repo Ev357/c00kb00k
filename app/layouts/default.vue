@@ -1,7 +1,7 @@
 <template>
   <div class="flex h-full">
     <Aside />
-    <main>
+    <main class="grow">
       <slot />
     </main>
   </div>

@@ -3,7 +3,6 @@
   "ASIDE.DASHBOARD": "Přehled",
   "ASIDE.NEW_RECEPIE": "Přidat recept",
   "ASIDE.NOTIFICATIONS": "Notifikace",
-  "ASIDE.RECEPIES": "Recepty",
   "ASIDE.SETTINGS": "Nastavení",
   "AUTH.ACTIONS.LOGGING_IN": "Přihlašování...",
   "AUTH.ACTIONS.SIGNING_UP": "Registrování...",
@@ -24,5 +23,6 @@
   "AUTH.OTP.SIGNUP_SUCCESS": "Registrace proběhla úspěšně",
   "AUTH.SIGN_UP": "Registrovat se",
   "COMMON.CONTINUE": "Pokračovat",
-  "COMMON.ERROR": "Chyba"
+  "COMMON.ERROR": "Chyba",
+  "RECEPIES.TITLE": "Recepty"
 }

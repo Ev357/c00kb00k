@@ -3,7 +3,6 @@
   "ASIDE.DASHBOARD": "Dashboard",
   "ASIDE.NEW_RECEPIE": "New Recipe",
   "ASIDE.NOTIFICATIONS": "Notifications",
-  "ASIDE.RECEPIES": "Recepies",
   "ASIDE.SETTINGS": "Settings",
   "AUTH.ACTIONS.LOGGING_IN": "Logging in...",
   "AUTH.ACTIONS.SIGNING_UP": "Signing up...",
@@ -24,5 +23,6 @@
   "AUTH.OTP.SIGNUP_SUCCESS": "Signup successful",
   "AUTH.SIGN_UP": "Sign Up",
   "COMMON.CONTINUE": "Continue",
-  "COMMON.ERROR": "Error"
+  "COMMON.ERROR": "Error",
+  "RECEPIES.TITLE": "Recepies"
 }

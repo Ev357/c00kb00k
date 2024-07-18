@@ -3,6 +3,7 @@ const {
   iconsPlugin,
   getIconCollections,
 } = require("@egoist/tailwindcss-icons");
+const containerQueries = require("@tailwindcss/container-queries");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -94,5 +95,6 @@ module.exports = {
     iconsPlugin({
       collections: getIconCollections(["lucide"]),
     }),
+    containerQueries,
   ],
 };

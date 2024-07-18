@@ -9,7 +9,7 @@ const menuItems: { title: string; to: string; icon: string }[] = [
     icon: "i-lucide-layout-dashboard",
   },
   {
-    title: "ASIDE.RECEPIES",
+    title: "RECEPIES.TITLE",
     to: "/recepies",
     icon: "i-lucide-gantt-chart",
   },
@@ -36,7 +36,7 @@ const userInitial = computed(() => user.value.email.slice(0, 1).toUpperCase());
 </script>
 
 <template>
-  <nav class="hidden md:block">
+  <nav class="hidden lg:block">
     <aside class="flex h-full w-64 flex-col border-r p-4">
       <NuxtLinkLocale
         to="/dashboard"
