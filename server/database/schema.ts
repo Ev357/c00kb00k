@@ -1,7 +1,7 @@
-import { integer, pgTable, serial, text } from "drizzle-orm/pg-core";
+import { integer, pgTable, serial, text, uuid } from "drizzle-orm/pg-core";
 
 export const c00kb00ks = pgTable("c00kb00ks", {
-  id: serial("id").primaryKey(),
+  id: uuid("id").primaryKey().defaultRandom(),
   name: text("name").notNull(),
   description: text("description"),
 });
