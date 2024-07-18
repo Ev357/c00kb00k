@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS "c00kb00ks" (
-	"id" serial PRIMARY KEY NOT NULL,
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"name" text NOT NULL,
 	"description" text
 );

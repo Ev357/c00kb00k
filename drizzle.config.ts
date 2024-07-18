@@ -5,6 +5,7 @@ export default defineConfig({
   schema: "./server/database/schema.ts",
   out: "./server/database/migrations",
   dbCredentials: {
-    url: process.env.NUXT_SUPABASE_DATABASE_URL!,
+    url: process.env.NUXT_SUPABASE_DATABASE_URL ?? "",
+    port: 5432,
   },
 });
