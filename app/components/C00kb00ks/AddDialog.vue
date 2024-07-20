@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { addC00kb00kSchema } from "@/schemas/addC00kb00k";
+import { VisuallyHidden } from "radix-vue";
 
 const emit = defineEmits<{
   refetch: [value: undefined];
@@ -29,7 +30,7 @@ const onSubmit = handleSubmit((body) => {
     body,
     onSuccess: () => {
       open.value = false;
-      emit("refetch", undefined)
+      emit("refetch", undefined);
     },
   });
 });
@@ -44,6 +45,11 @@ const onSubmit = handleSubmit((body) => {
       <form @submit="onSubmit">
         <UDialogHeader>
           <UDialogTitle>{{ $t("C00KB00KS.DIALOG.ADD.TITLE") }}</UDialogTitle>
+          <VisuallyHidden as-child>
+            <UDialogDescription>
+              {{ $t("C00KB00KS.DIALOG.ADD.TITLE") }}
+            </UDialogDescription>
+          </VisuallyHidden>
         </UDialogHeader>
         <div class="flex flex-col gap-4">
           <div class="flex flex-col gap-2">
