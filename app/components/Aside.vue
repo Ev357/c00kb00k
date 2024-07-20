@@ -9,8 +9,8 @@ const menuItems: { title: string; to: string; icon: string }[] = [
     icon: "i-lucide-layout-dashboard",
   },
   {
-    title: "RECEPIES.TITLE",
-    to: "/recepies",
+    title: "C00KB00KS.TITLE",
+    to: "/c00kb00ks",
     icon: "i-lucide-gantt-chart",
   },
   {
