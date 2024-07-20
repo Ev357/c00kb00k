@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<Props>(), {
   variant: "default",
   size: "default",
   class: undefined,
-  isLoading: false,
+  loading: false,
 });
 </script>
 

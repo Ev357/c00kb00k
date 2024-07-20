@@ -16,13 +16,13 @@ const [description, descriptionAttrs] = defineField("description");
 
 const open = ref(false);
 
-const isLoading = ref(false);
+const loading = ref(false);
 
 const { submit } = useSubmit();
 
 const onSubmit = handleSubmit((body) => {
   submit("/api/c00kb00ks", {
-    isLoading,
+    loading,
     sonner: {
       loading: "COMMON.ACTIONS.ADDING",
       success: "C00KB00KS.DIALOG.ADD.SUCCESS",
@@ -76,7 +76,7 @@ watch(open, () => {
           </div>
         </div>
         <UDialogFooter>
-          <UButton type="submit" :is-loading>{{ $t("COMMON.ADD") }}</UButton>
+          <UButton type="submit" :loading>{{ $t("COMMON.ADD") }}</UButton>
         </UDialogFooter>
         <UDialogClose
           class="absolute right-4 top-4 flex rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"

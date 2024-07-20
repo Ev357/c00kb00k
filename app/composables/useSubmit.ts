@@ -7,7 +7,7 @@ type SonnerOptions = {
 };
 
 type SubmitOptions = {
-  isLoading?: Ref<boolean>;
+  loading?: Ref<boolean>;
   method?: "POST" | "PUT" | "DELETE";
   body?: Record<string, unknown> | BodyInit;
   sonner?: SonnerOptions;
@@ -19,10 +19,10 @@ export const useSubmit = () => {
 
   const { t } = useI18n();
 
-  function getSetLoading(isLoading?: Ref<boolean>) {
+  function getSetLoading(loading?: Ref<boolean>) {
     function setLoading(value: boolean) {
-      if (!isLoading) return;
-      isLoading.value = value;
+      if (!loading) return;
+      loading.value = value;
     }
 
     return { setLoading };
@@ -46,7 +46,7 @@ export const useSubmit = () => {
   }
 
   async function submit(request: string, opts: SubmitOptions = {}) {
-    const { setLoading } = getSetLoading(opts.isLoading);
+    const { setLoading } = getSetLoading(opts.loading);
 
     setLoading(true);
     if (opts.sonner) {
