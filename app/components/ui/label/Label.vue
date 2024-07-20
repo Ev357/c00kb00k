@@ -3,7 +3,18 @@ import { type HTMLAttributes, computed } from "vue";
 import { Label, type LabelProps } from "radix-vue";
 import { cn } from "@/lib/utils";
 
-const props = defineProps<LabelProps & { class?: HTMLAttributes["class"] }>();
+const props = withDefaults(
+  defineProps<
+    LabelProps & {
+      class?: HTMLAttributes["class"];
+      required?: boolean;
+    }
+  >(),
+  {
+    class: undefined,
+    required: false,
+  },
+);
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props;
@@ -23,5 +34,6 @@ const delegatedProps = computed(() => {
     "
   >
     <slot />
+    <span v-if="required">{{ " *" }}</span>
   </Label>
 </template>

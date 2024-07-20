@@ -22,9 +22,17 @@
   "AUTH.OTP.RESEND_CODE": "Poslat znovu",
   "AUTH.OTP.SIGNUP_SUCCESS": "Registrace proběhla úspěšně",
   "AUTH.SIGN_UP": "Registrovat se",
+  "C00KB00KS.DIALOG.ADD.ERROR": "Nepodařilo se přidat kuchařku",
+  "C00KB00KS.DIALOG.ADD.SUCCESS": "Kuchařka byla úspěšně přidána",
+  "C00KB00KS.DIALOG.ADD.TITLE": "Přidejte kuchařku",
   "C00KB00KS.EMPTY.DESCRIPTION": "Vypadá to, že ještě nemáte žádné kuchařky. Začněte tím, že jednu přidáte.",
   "C00KB00KS.EMPTY.TITLE": "Nebyly nalezeny žádné kuchařky",
   "C00KB00KS.TITLE": "C00kb00ks",
+  "COMMON.ACTIONS.ADDING": "Přidávání...",
+  "COMMON.ADD": "Přidat",
+  "COMMON.CLOSE": "Zavřít",
   "COMMON.CONTINUE": "Pokračovat",
-  "COMMON.ERROR": "Chyba"
+  "COMMON.DESCRIPTION": "Popis",
+  "COMMON.ERROR": "Chyba",
+  "COMMON.NAME": "Jméno"
 }

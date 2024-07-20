@@ -1,14 +1,8 @@
 import { c00kb00ks } from "@@/server/database/schema";
-import zod from "zod";
+import { addC00kb00kSchema } from "@/schemas/addC00kb00k";
 
 export default eventHandler(async (event) => {
-  const body = await readValidatedBody(
-    event,
-    zod.object({
-      name: zod.string().trim().min(1).max(255),
-      description: zod.string().trim().min(1).max(1023),
-    }).safeParse,
-  );
+  const body = await readValidatedBody(event, addC00kb00kSchema.safeParse);
 
   if (!body.success) {
     throw createError({

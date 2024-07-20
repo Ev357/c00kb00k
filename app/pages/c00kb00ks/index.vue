@@ -9,7 +9,7 @@ definePageMeta({
   middleware: "auth",
 });
 
-const { data, status } = await useLazyFetch("/api/c00kb00ks");
+const { data, status, refresh } = await useLazyFetch("/api/c00kb00ks");
 
 const isEmpty = computed(
   () => status.value === "success" && data.value?.length === 0,
@@ -20,7 +20,7 @@ const isEmpty = computed(
   <MaxWidthWrapper class="@container">
     <div class="flex items-center justify-between">
       <h2 class="text-3xl font-bold">{{ $t("C00KB00KS.TITLE") }}</h2>
-      <C00kb00ksAddDialog v-if="!isEmpty">
+      <C00kb00ksAddDialog v-if="!isEmpty" @refetch="refresh">
         <UButton variant="outline">
           <span class="i-lucide-plus size-4 shrink-0"></span>
         </UButton>
@@ -45,7 +45,7 @@ const isEmpty = computed(
           {{ $t("C00KB00KS.EMPTY.DESCRIPTION") }}
         </p>
       </div>
-      <C00kb00ksAddDialog>
+      <C00kb00ksAddDialog @refetch="refresh">
         <UButton variant="outline">
           <span class="i-lucide-plus size-4 shrink-0"></span>
         </UButton>

@@ -1,28 +1,70 @@
+<script setup lang="ts">
+import { addC00kb00kSchema } from "@/schemas/addC00kb00k";
+
+const emit = defineEmits<{
+  refetch: [value: undefined];
+}>();
+
+const { errors, defineField, isFieldTouched, handleSubmit } = useForm({
+  validationSchema: toTypedSchema(addC00kb00kSchema),
+});
+
+const [name, nameAttrs] = defineField("name");
+const [description, descriptionAttrs] = defineField("description");
+
+const open = ref(false);
+
+const isLoading = ref(false);
+
+const { submit } = useSubmit();
+
+const onSubmit = handleSubmit((body) => {
+  submit("/api/c00kb00ks", {
+    isLoading,
+    sonner: {
+      loading: "COMMON.ACTIONS.ADDING",
+      success: "C00KB00KS.DIALOG.ADD.SUCCESS",
+      error: "C00KB00KS.DIALOG.ADD.ERROR",
+    },
+    body,
+    onSuccess: () => {
+      open.value = false;
+      emit("refetch", undefined)
+    },
+  });
+});
+</script>
+
 <template>
-  <UDialog>
+  <UDialog v-model:open="open">
     <UDialogTrigger as-child>
       <slot />
     </UDialogTrigger>
-    <UDialogContent class="sm:max-w-[425px]">
-      <UDialogHeader>
-        <UDialogTitle>Edit profile</UDialogTitle>
-        <UDialogDescription>
-          Make changes to your profile here. Click save when you're done.
-        </UDialogDescription>
-      </UDialogHeader>
-      <div class="grid gap-4 py-4">
-        <div class="grid grid-cols-4 items-center gap-4">
-          <ULabel for="name" class="text-right">Name</ULabel>
-          <UInput id="name" value="Pedro Duarte" class="col-span-3" />
+    <UDialogContent as-child>
+      <form @submit="onSubmit">
+        <UDialogHeader>
+          <UDialogTitle>{{ $t("C00KB00KS.DIALOG.ADD.TITLE") }}</UDialogTitle>
+        </UDialogHeader>
+        <div class="flex flex-col gap-4">
+          <div class="flex flex-col gap-2">
+            <ULabel for="name" required>{{ $t("COMMON.NAME") }}</ULabel>
+            <UInput id="name" v-bind="nameAttrs" v-model="name" />
+            <FormError name="name" :is-field-touched :errors />
+          </div>
+          <div class="flex flex-col gap-2">
+            <ULabel for="description">{{ $t("COMMON.DESCRIPTION") }}</ULabel>
+            <UInput
+              id="description"
+              v-bind="descriptionAttrs"
+              v-model="description"
+            />
+            <FormError name="description" :is-field-touched :errors />
+          </div>
         </div>
-        <div class="grid grid-cols-4 items-center gap-4">
-          <ULabel for="username" class="text-right">Username</ULabel>
-          <UInput id="username" value="@peduarte" class="col-span-3" />
-        </div>
-      </div>
-      <UDialogFooter>
-        <UButton type="submit">Save changes</UButton>
-      </UDialogFooter>
+        <UDialogFooter>
+          <UButton type="submit" :is-loading>{{ $t("COMMON.ADD") }}</UButton>
+        </UDialogFooter>
+      </form>
     </UDialogContent>
   </UDialog>
 </template>

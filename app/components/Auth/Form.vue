@@ -33,13 +33,7 @@ const onSubmit = handleSubmit((values) => {
       v-model="email"
       placeholder="user@example.com"
     />
-    <span
-      v-if="isFieldTouched('email') && errors.email"
-      role="alert"
-      class="text-sm text-red-500"
-    >
-      {{ errors.email }}
-    </span>
+    <FormError name="email" :is-field-touched :errors />
     <UButton
       class="flex h-fit w-full gap-2 py-3"
       type="submit"
