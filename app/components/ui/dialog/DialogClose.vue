@@ -6,6 +6,9 @@ const props = defineProps<DialogCloseProps>();
 
 <template>
   <DialogClose v-bind="props">
-    <slot />
+    <slot>
+      <span class="i-lucide-x size-4 shrink-0"></span>
+      <span class="sr-only">{{ $t("COMMON.CLOSE") }}</span>
+    </slot>
   </DialogClose>
 </template>
