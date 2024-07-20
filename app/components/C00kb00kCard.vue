@@ -8,7 +8,7 @@ defineProps<{
 
 <template>
   <NuxtLinkLocale :to="`/c00kb00ks/${c00kb00k.id}`">
-    <UCard>
+    <UCard class="h-full">
       <UCardHeader>
         <UCardTitle>{{ c00kb00k.name }}</UCardTitle>
         <UCardDescription class="line-clamp-2">

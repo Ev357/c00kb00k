@@ -6,9 +6,10 @@ const emit = defineEmits<{
   refetch: [value: undefined];
 }>();
 
-const { errors, defineField, isFieldTouched, handleSubmit } = useForm({
-  validationSchema: toTypedSchema(addC00kb00kSchema),
-});
+const { errors, defineField, isFieldTouched, handleSubmit, resetForm } =
+  useForm({
+    validationSchema: toTypedSchema(addC00kb00kSchema),
+  });
 
 const [name, nameAttrs] = defineField("name");
 const [description, descriptionAttrs] = defineField("description");
@@ -30,9 +31,16 @@ const onSubmit = handleSubmit((body) => {
     body,
     onSuccess: () => {
       open.value = false;
+      resetForm();
       emit("refetch", undefined);
     },
   });
+});
+
+watch(open, () => {
+  if (!open.value) return;
+
+  resetForm();
 });
 </script>
 
