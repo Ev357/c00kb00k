@@ -15,11 +15,11 @@
 		validators: zodClient(formSchema),
 		dataType: 'json',
 		onUpdate: ({ result }) => {
-			const action: FormResult<ActionData> = result.data;
+			const action = result.data as FormResult<ActionData>;
 
-			if (result.type === 'failure' && action.success === false && action.message !== undefined) {
-				toast.error(action.message);
-			}
+			if (result.type !== 'failure' || action.success !== false) return;
+
+			toast.error(action.message);
 		}
 	});
 
@@ -62,15 +62,6 @@
 				{#snippet children({ props })}
 					<Form.Label>{m.email()}</Form.Label>
 					<Input {...props} bind:value={$formData.email} required />
-				{/snippet}
-			</Form.Control>
-			<Form.FieldErrors />
-		</Form.Field>
-		<Form.Field {form} name="password">
-			<Form.Control>
-				{#snippet children({ props })}
-					<Form.Label>{m.password()}</Form.Label>
-					<Input {...props} bind:value={$formData.password} required />
 				{/snippet}
 			</Form.Control>
 			<Form.FieldErrors />

@@ -1,8 +1,9 @@
 import type { PageServerLoad } from './$types';
 import { fail, superValidate } from 'sveltekit-superforms';
 import { zod } from 'sveltekit-superforms/adapters';
-import type { Actions } from '@sveltejs/kit';
+import { redirect, type Actions } from '@sveltejs/kit';
 import { formSchema } from './schema';
+import * as m from '$lib/paraglide/messages';
 
 export const load: PageServerLoad = async () => ({
 	form: await superValidate(zod(formSchema))
@@ -13,31 +14,38 @@ export const actions: Actions = {
 		const form = await superValidate(event, zod(formSchema));
 		if (!form.valid) {
 			return fail(400, {
-				form
+				form,
+				success: false,
+				message: m.error_invalid_data()
 			});
 		}
 
-		// TODO: sign up
-
-		/* const {
+		const {
 			locals: { supabase }
-		} = event; */
+		} = event;
 
-		/* const { error } = await supabase.auth.signInWithOtp({ email: form.data.email });
+		const { error } = await supabase.auth.signInWithOtp({
+			email: form.data.email,
+			options: {
+				data: {
+					firstName: form.data.firstName,
+					lastName: form.data.lastName
+				}
+			}
+		});
 
 		if (error) {
 			return fail(400, {
 				form,
 				success: false,
-				email: form.data.email,
-				message: `There was an issue, Please contact support.`
+				message: m.error_contact_support()
 			});
-		} */
+		}
 
-		return {
-			form,
-			success: true,
-			message: 'Please check your email for a magic link to log into the website.'
-		};
+		const params = new URLSearchParams({
+			email: form.data.email
+		});
+
+		redirect(303, `/sign-up/factor-one?${params}`);
 	}
 };
