@@ -1,4 +1,23 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-  "hello_world": "Hello, {name} from cs!"
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"check_email": "Zkontrolujte svůj email",
+	"code_sent": "Kód odeslán",
+	"did_not_receive_code": "Nedostali jste kód?",
+	"email": "Email",
+	"enter_code": "Zadejte kód, který jsme vám poslali na ",
+	"error_contact_support": "Došlo k problému. Kontaktujte prosím podporu.",
+	"error_invalid_data": "Invalid data. Please check your input and try again.",
+	"first_name": "Jméno",
+	"invalid_code": "Kód je neplatný nebo vypršel",
+	"last_name": "Příjmení",
+	"page_continue": "Pokračovat",
+	"password": "Heslo",
+	"resend_code": "Poslat znovu",
+	"sending_code": "Odesílání kódu...",
+	"sign_in": "Přihlásit se",
+	"sign_in_description": "Nemáte účet? ",
+	"sign_in_title": "Přihlásit se do C00kb00k",
+	"sign_up": "Registrovat se",
+	"sign_up_description": "Už máte účet? ",
+	"sign_up_title": "Založte si svůj účet v C00kb00ku"
 }
