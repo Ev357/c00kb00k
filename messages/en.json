@@ -1,4 +1,24 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from en!"
+	"check_email": "Check your email",
+	"code_sent": "Code sent",
+	"did_not_receive_code": "Didn't receive a code?",
+	"email": "Email",
+	"enter_code": "Enter the code we just sent to ",
+	"error": "Chyba",
+	"error_contact_support": "There was an issue, Please contact support.",
+	"error_invalid_data": "Invalid data. Please check your input and try again.",
+	"first_name": "First name",
+	"invalid_code": "Code is invalid or has expired",
+	"last_name": "Last name",
+	"page_continue": "Continue",
+	"password": "Password",
+	"resend_code": "Resend code",
+	"sending_code": "Sending code...",
+	"sign_in": "Sign in",
+	"sign_in_description": "Don't have an account? ",
+	"sign_in_title": "Sign in to C00kb00k",
+	"sign_up": "Sign up",
+	"sign_up_description": "Already have an account? ",
+	"sign_up_title": "Create your C00kb00k account"
 }

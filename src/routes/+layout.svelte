@@ -5,6 +5,7 @@
 	import { ModeWatcher } from 'mode-watcher';
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import { Toaster } from '$lib/components/ui/sonner';
 
 	let { data, children } = $props();
 
@@ -22,6 +23,9 @@
 </script>
 
 <ParaglideJS {i18n}>
-	<ModeWatcher />
-	{@render children()}
+	<div class="absolute inset-0">
+		{@render children()}
+	</div>
 </ParaglideJS>
+<ModeWatcher />
+<Toaster />
