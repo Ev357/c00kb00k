@@ -28,8 +28,7 @@ export const actions: Actions = {
 			email: form.data.email,
 			options: {
 				data: {
-					firstName: form.data.firstName,
-					lastName: form.data.lastName
+					username: form.data.username
 				}
 			}
 		});
