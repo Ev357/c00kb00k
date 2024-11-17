@@ -37,26 +37,15 @@
 </Card.Header>
 <Card.Content>
 	<form method="POST" use:enhance>
-		<div class="flex flex-col gap-x-4 sm:flex-row">
-			<Form.Field {form} name="firstName">
-				<Form.Control>
-					{#snippet children({ props })}
-						<Form.Label>{m.first_name()}</Form.Label>
-						<Input {...props} bind:value={$formData.firstName} required />
-					{/snippet}
-				</Form.Control>
-				<Form.FieldErrors />
-			</Form.Field>
-			<Form.Field {form} name="lastName">
-				<Form.Control>
-					{#snippet children({ props })}
-						<Form.Label>{m.last_name()}</Form.Label>
-						<Input {...props} bind:value={$formData.lastName} required />
-					{/snippet}
-				</Form.Control>
-				<Form.FieldErrors />
-			</Form.Field>
-		</div>
+		<Form.Field {form} name="username">
+			<Form.Control>
+				{#snippet children({ props })}
+					<Form.Label>{m.username()}</Form.Label>
+					<Input {...props} bind:value={$formData.username} required />
+				{/snippet}
+			</Form.Control>
+			<Form.FieldErrors />
+		</Form.Field>
 		<Form.Field {form} name="email">
 			<Form.Control>
 				{#snippet children({ props })}
