@@ -4,7 +4,7 @@
 	import * as m from '$lib/paraglide/messages';
 	import * as Form from '$lib/components/ui/form/index';
 	import type { PageData } from './$types';
-	import { superForm, type FormResult } from 'sveltekit-superforms';
+	import { type FormResult } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 	import { formSchema } from './schema';
 	import * as InputOTP from '$lib/components/ui/input-otp';
@@ -12,6 +12,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { toast } from 'svelte-sonner';
 	import type { ActionData } from '../$types';
+	import { superForm } from '$lib/superForm';
 
 	let { data }: { data: PageData } = $props();
 

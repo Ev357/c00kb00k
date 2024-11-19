@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { superForm, type FormResult } from 'sveltekit-superforms';
+	import type { FormResult } from 'sveltekit-superforms';
 	import * as Form from '$lib/components/ui/form/index';
 	import { Input } from '$lib/components/ui/input/index';
 	import type { ActionData, PageData } from './$types';
@@ -8,6 +8,7 @@
 	import { toast } from 'svelte-sonner';
 	import * as Card from '$lib/components/ui/card';
 	import * as m from '$lib/paraglide/messages';
+	import { superForm } from '$lib/superForm';
 
 	let { data }: { data: PageData } = $props();
 

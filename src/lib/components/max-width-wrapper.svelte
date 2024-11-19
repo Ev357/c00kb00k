@@ -5,8 +5,8 @@
 	let { children, class: className, ...restProps }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-<div class="flex w-full justify-center px-4">
-	<div class={cn('w-full max-w-[1080px] pt-12', className)} {...restProps}>
+<div class="flex w-full justify-center p-4">
+	<div class={cn('w-full max-w-[1080px] pt-8', className)} {...restProps}>
 		{@render children?.()}
 	</div>
 </div>

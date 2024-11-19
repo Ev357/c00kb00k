@@ -28,4 +28,4 @@
 	</div>
 </ParaglideJS>
 <ModeWatcher />
-<Toaster />
+<Toaster class="pointer-events-auto" />

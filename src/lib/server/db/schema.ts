@@ -1,6 +1,18 @@
-import { pgTable, serial, text, integer } from 'drizzle-orm/pg-core';
+import { pgTable, uuid, text, serial } from 'drizzle-orm/pg-core';
 
-export const user = pgTable('user', {
+export const cookbooks = pgTable('cookbooks', {
+	id: uuid('id').primaryKey().defaultRandom(),
+	name: text('name').notNull(),
+	description: text('description'),
+	ownerId: text('ownerId').notNull()
+});
+
+export type SelectCookbook = typeof cookbooks.$inferSelect;
+
+export const usersToCookbooks = pgTable('usersToCookbooks', {
 	id: serial('id').primaryKey(),
-	age: integer('age')
+	userId: text('userId').notNull(),
+	cookbookId: uuid('cookbookId')
+		.notNull()
+		.references(() => cookbooks.id)
 });

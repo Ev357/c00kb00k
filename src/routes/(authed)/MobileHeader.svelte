@@ -43,11 +43,11 @@
 		{m.dashboard()}
 	</a>
 	<a
-		href="/recepies"
+		href="/cookbooks"
 		class={cn(buttonVariants({ variant: 'ghost' }), 'justify-start text-muted-foreground')}
 		onclick={closeHeader}
 	>
-		{m.recepies()}
+		{m.cookbooks()}
 	</a>
 	<a
 		href="/settings"

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { superForm, type FormResult } from 'sveltekit-superforms';
+	import type { FormResult } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 	import type { ActionData, PageData } from './$types';
 	import { toast } from 'svelte-sonner';
@@ -8,6 +8,7 @@
 	import * as Form from '$lib/components/ui/form/index';
 	import { Input } from '$lib/components/ui/input/index';
 	import { formSchema } from './schema';
+	import { superForm } from '$lib/superForm';
 
 	let { data }: { data: PageData } = $props();
 

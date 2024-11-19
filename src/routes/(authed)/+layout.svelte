@@ -14,9 +14,9 @@
 	setContext('auth', data.supabase.auth);
 </script>
 
-<div class="flex h-full flex-col">
+<div class="flex h-full flex-col overflow-y-auto">
 	<Header />
-	<main class="grow overflow-y-auto">
+	<main class="grow">
 		<MaxWidthWrapper>
 			{@render children()}
 		</MaxWidthWrapper>

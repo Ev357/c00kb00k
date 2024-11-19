@@ -64,14 +64,20 @@
 {:else}
 	<button
 		bind:this={ref}
-		class={cn(buttonVariants({ variant, size, className }))}
+		class={cn(
+			buttonVariants({ variant, size, className }),
+			loading && 'relative items-center justify-center'
+		)}
 		{type}
 		{...restProps}
 	>
 		{#if !loading}
 			{@render children?.()}
 		{:else}
-			<LoaderCircle class="size-4 shrink-0 animate-spin" />
+			<div class="invisible">
+				{@render children?.()}
+			</div>
+			<LoaderCircle class="absolute flex shrink-0 animate-spin" />
 		{/if}
 	</button>
 {/if}

@@ -22,7 +22,8 @@
 	<header
 		class={cn(
 			'flex w-full max-w-[1400px] flex-col gap-4 p-4',
-			headerContext.isOpen && 'absolute inset-0 bg-background sm:static sm:inset-auto sm:bg-inherit'
+			headerContext.isOpen &&
+				'absolute inset-0 z-50 bg-background sm:static sm:inset-auto sm:bg-inherit'
 		)}
 	>
 		<div class="flex justify-between gap-4">
@@ -41,14 +42,14 @@
 					{m.dashboard()}
 				</a>
 				<a
-					href="/recepies"
+					href="/cookbooks"
 					class={cn(
 						'transition-colors hover:text-foreground/80',
-						$page.url.pathname.startsWith('/recepies') ? 'text-foreground' : 'text-foreground/60'
+						$page.url.pathname.startsWith('/cookbooks') ? 'text-foreground' : 'text-foreground/60'
 					)}
 					data-sveltekit-preload-data
 				>
-					{m.recepies()}
+					{m.cookbooks()}
 				</a>
 				<a
 					href="/settings"
