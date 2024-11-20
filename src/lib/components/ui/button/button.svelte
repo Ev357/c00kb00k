@@ -42,7 +42,7 @@
 
 <script lang="ts">
 	import { cn } from '$lib/utils';
-	import LoaderCircle from 'lucide-svelte/icons/loader-circle';
+	import { LoaderCircle } from 'lucide-svelte';
 
 	let {
 		class: className,

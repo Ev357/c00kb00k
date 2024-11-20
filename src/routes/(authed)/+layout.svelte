@@ -1,5 +1,5 @@
 <script lang="ts">
-	import MaxWidthWrapper from '$lib/components/max-width-wrapper.svelte';
+	import MaxWidthWrapper from '$lib/components/MaxWidthWrapper.svelte';
 	import { setContext } from 'svelte';
 	import Header from './Header.svelte';
 	import { redirect } from '@sveltejs/kit';
@@ -14,7 +14,7 @@
 	setContext('auth', data.supabase.auth);
 </script>
 
-<div class="flex h-full flex-col overflow-y-auto">
+<div class="flex h-full min-h-svh flex-col">
 	<Header />
 	<main class="grow">
 		<MaxWidthWrapper>

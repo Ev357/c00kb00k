@@ -4,5 +4,5 @@
 </script>
 
 <Button variant="outline" size="icon" class="rounded-full">
-	<Bell />
+	<Bell class="shrink-0" />
 </Button>
