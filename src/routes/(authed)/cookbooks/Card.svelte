@@ -8,9 +8,9 @@
 <a href={`/cookbooks/${cookbook.id}`} class="rounded-xl">
 	<Card.Root class="h-full transition-colors hover:bg-accent">
 		<Card.Header>
-			<Card.Title>{cookbook.name}</Card.Title>
+			<Card.Title class="truncate">{cookbook.name}</Card.Title>
 			{#if cookbook.description}
-				<Card.Description>{cookbook.description}</Card.Description>
+				<Card.Description class="line-clamp-2">{cookbook.description}</Card.Description>
 			{/if}
 		</Card.Header>
 		<Card.Footer />
