@@ -1,12 +1,12 @@
 <script lang="ts">
-	import * as m from '$lib/paraglide/messages';
 	import Title from '$lib/components/Title.svelte';
+	import { page } from '$app/stores';
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
-	<Title name={m.cookbooks()} />
+	<Title name={$page.params.id} />
 </svelte:head>
 
 {@render children()}

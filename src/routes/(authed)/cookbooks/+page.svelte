@@ -10,6 +10,7 @@
 	import * as Pagination from '$lib/components/ui/pagination';
 	import { pageState } from '$lib/stores/pageState';
 	import { searchState } from '$lib/stores/searchState';
+	import Title from '$lib/components/Title.svelte';
 
 	let { data }: { data: PageData } = $props();
 
@@ -30,6 +31,10 @@
 
 	let paginatedCookbooks = $derived(cookbooks.slice(($page - 1) * perPage, $page * perPage));
 </script>
+
+<svelte:head>
+	<Title name={m.cookbooks()} />
+</svelte:head>
 
 <div class="flex justify-between gap-2">
 	<h1 class="text-3xl font-bold">{m.cookbooks()}</h1>
